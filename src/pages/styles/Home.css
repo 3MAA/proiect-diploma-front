@@ -3,7 +3,8 @@
   height:100vh;
   width:100vw;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
 }
 
 .panel-container {
@@ -14,6 +15,38 @@
  border-radius: 50px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Afișează conținutul într-o singură coloană pe dispozitive mobile */
+  }
+
+  .panel-container {
+    width: 80vw; /* Largime mai mică pentru a se potrivi pe ecranele mobile */
+    height: 80vw; /* Înălțime auto pentru acomodarea conținutului */
+  }
+  .left-container, .right-container {
+    margin: 0;
+    padding: 0;
+  }
+  .text-header {
+    font-size: 40px;  /* Mărit pentru a fi mai lizibil pe dispozitive mobile */
+  }
+
+  .subtext-header {
+    font-size: 40vw; /* Mărit ușor pentru subtitlu */
+  }
+
+  p {
+    font-size: 50px;  /* Ajustat pentru a fi mai lizibil ca text de bază */
+    
+  }
+
+  .card-bottom-preview {
+    font-size: 5vw; /* Mărește fontul pentru linkuri și butoane */
+  }
+}
+
+  
 .left-container {
  display: flex;
  justify-content: center;
@@ -24,19 +57,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 50px;
+ /* margin-right: 50px;*/
 }
 
 .right-container img {
    max-width: 100%;
-   max-height: 80%;
-   width: auto;
    height: auto;
 }
 
 .text-header {
   color: var(--main);
-  font-size: 4.5vw; 
+  font-size: 3.8vw; 
   font-weight: bold;
   /*margin: 1.5vw 0 0.5vw 0;*/
   text-align: center;
@@ -45,16 +76,17 @@
 
 .subtext-header {
   color: var(--main);
-  font-size: 1.6vw;
+  font-size: 1.9vw;
   margin: -1vw 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
-  font-size: 1.3em; 
+  font-size: 1.5vw; 
   line-height: 1.5; 
   margin-left: 30px;
   margin-right: 30px;
+  margin: 4vw;
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -69,7 +101,7 @@ p {
 .card-bottom-preview{
   color:#313131;
   transition: color 0.3s, transform 0.3s;
-  font-size: 1.6vw;
+  font-size: 2vw;
   align-items: center;
   text-align: center;
 }

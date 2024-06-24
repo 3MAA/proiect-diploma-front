@@ -35,8 +35,8 @@ function Chatbot() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      const data = await response.json();
-      const botMessage = { text: `AVI: ${data.message}`, sender: 'bot' };
+      const data = await response.text();
+      const botMessage = { text: `AVICSC: ${data}`, sender: 'bot' };
       setMessages((messages) => [...messages, botMessage]);
     } catch (error) {
       console.error('Failed to fetch bot response:', error);

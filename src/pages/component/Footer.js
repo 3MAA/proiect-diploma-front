@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       © {new Date().getFullYear()} AVICSC - Asistent Virtual Inteligent pentru
-      Cazarea Studenților în Cămine. Toate drepturile sunt rezervate.
+      Cazarea Studenților în Cămine. Toate drepturile rezervate.
     </footer>
   );
 };
