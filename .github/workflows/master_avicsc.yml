@@ -34,6 +34,7 @@ jobs:
 
       - name: Archive build output
         run: |
+          if (Test-Path -Path archive/node-app.zip) { Remove-Item -Force archive/node-app.zip }
           Compress-Archive -Path * -DestinationPath archive/node-app.zip
 
       - name: Upload artifact for deployment job
