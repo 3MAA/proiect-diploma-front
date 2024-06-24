@@ -8,10 +8,10 @@ on:
 
 env:
   CI: false
-  
+
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -27,15 +27,10 @@ jobs:
           npm run build --if-present
           npm run test -- --passWithNoTests
 
-      - name: Prepare archive directory
-        run: |
-          if (Test-Path -Path archive) { Remove-Item -Recurse -Force archive }
-          New-Item -ItemType Directory -Path archive
-
       - name: Archive build output
         run: |
-          if (Test-Path -Path archive/node-app.zip) { Remove-Item -Force archive/node-app.zip }
-          Compress-Archive -Path * -DestinationPath archive/node-app.zip
+          mkdir -p archive
+          zip -r archive/node-app.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
