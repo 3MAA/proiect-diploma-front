@@ -29,8 +29,8 @@ jobs:
 
       - name: Archive build output
         run: |
-          mkdir -p archive
-          zip -r ./archive/node-app.zip .
+          mkdir archive
+          Compress-Archive -Path * -DestinationPath archive/node-app.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
