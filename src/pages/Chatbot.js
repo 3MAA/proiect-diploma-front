@@ -30,7 +30,7 @@ function Chatbot() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://localhost:7102/Chatbot?input=${encodeURIComponent(userInput)}`
+        `avicsc.azurewebsites.net/Chatbot?input=${encodeURIComponent(userInput)}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
