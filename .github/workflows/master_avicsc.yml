@@ -27,9 +27,13 @@ jobs:
           npm run build --if-present
           npm run test -- --passWithNoTests
 
+      - name: Prepare archive directory
+        run: |
+          if (Test-Path -Path archive) { Remove-Item -Recurse -Force archive }
+          New-Item -ItemType Directory -Path archive
+
       - name: Archive build output
         run: |
-          mkdir archive
           Compress-Archive -Path * -DestinationPath archive/node-app.zip
 
       - name: Upload artifact for deployment job
